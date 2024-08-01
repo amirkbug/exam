@@ -480,7 +480,9 @@
                 <div class="profile mt-auto">
                   <img src="{{maker.image.url}}" class="testimonial-img" alt="">
                   <h3>{{maker.name.username}}</h3>
-                  <h4>{{maker.skills.name}}</h4>
+                  {% for skill in maker.skills.all %}
+                  <h4>{{skill.name}}</h4>
+                  {% endfor %}
                 </div>
               </div>
             </div><!-- End testimonial item -->
