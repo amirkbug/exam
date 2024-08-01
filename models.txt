@@ -1,0 +1,64 @@
+
+
+
+Table specialservices {
+  id int pk 
+  name char
+  content char
+  status bool
+  created_at time
+}
+
+Table services {
+  id int pk 
+  name char
+  content char
+  status bool
+  created_at time
+}
+
+Table pricing {
+  id int pk
+  name char
+  content char
+  price float
+  property mmk //property
+  status bool
+  created_at time
+}
+
+
+Table property {
+  id int pk
+  name char
+  status bool
+  created_at time
+}
+
+Table questions{
+  id int pk
+  questions char
+  answer char
+  created_at time
+}
+
+
+Table makers{
+  id int pk
+  name fk
+  content char
+  image image
+  skills fk
+  created_at time
+}
+
+Table skills{
+  id int pk
+  name char
+  status bool
+  created_at time
+}
+
+Ref: "pricing"."property" < "property"."id"
+
+Ref: "makers"."skills" < "skills"."id"
